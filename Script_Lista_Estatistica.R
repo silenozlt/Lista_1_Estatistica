@@ -116,7 +116,14 @@ View(questao8)
 
 which.max(questao8$questao8_data)
 
+#####################################################################################
+# PERGUNTA - 9 Fa ̧ca um gr ́afico de barras representando o nu ́mero de empregos por Grande Grupo
+questao9 <- aggregate(cbind(rais_completo$descricao ,rais_completo$total_empregos)
+  ,by = list(ocupacao = rais_completo$total_empregos), FUN = "sum" )
 
+
+questao6 <- aggregate(cbind( rais_completo$id_cbo, rais_completo$renda_mensal_total)
+                      ,by = list(rais_completo$id_cbo), FUN = "sum" )
 
 
 #CARREGANDO CONJUNTO DE DADOS INFERT
