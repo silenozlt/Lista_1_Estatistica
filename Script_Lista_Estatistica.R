@@ -120,12 +120,25 @@ which.max(questao8$questao8_data)
 # PERGUNTA - 9 Fa ̧ca um gr ́afico de barras representando o nu ́mero de empregos por Grande Grupo
 questao9 <- aggregate(cbind(rais_completo$descricao ,rais_completo$total_empregos)
   ,by = list(ocupacao = rais_completo$total_empregos), FUN = "sum" )
+View(questao9)
+
+questao9 <- data_frame(rais_completo$id_cbo, rais_completo$total_empregos, rais_completo$descricao)
+
+View(questao9)
 
 
-questao6 <- aggregate(cbind( rais_completo$id_cbo, rais_completo$renda_mensal_total)
-                      ,by = list(rais_completo$id_cbo), FUN = "sum" )
 
 
+boxplot(rais_completo$descricao, rais_completo$total_empregos)
+
+
+
+
+
+
+
+
+#####################################################################################
 #CARREGANDO CONJUNTO DE DADOS INFERT
 (data("infert"))
 View(infert)
@@ -147,5 +160,5 @@ table(infert$education,infert$spontaneous) # Tabela cruzada de frequ?ncia absolu
 #TABELA CRUZADA
 CrossTable(x=infert$education,y=infert$induced,format="SAS")
 ?CrossTable
-33
+
 
