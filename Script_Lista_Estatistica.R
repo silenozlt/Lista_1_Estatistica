@@ -95,10 +95,14 @@ View(questao4)
 
 subset(rais_completo$sg_estado, rais_completo$ano > 2000, rais_completo$total_empregos,)
 
-
-
-
 # PERGUNTA 5 - Qual ocupacao possui o maior número de empregos no Brasil?
+questao5 <- aggregate(cbind( rais_completo$renda_mensa, rais_completo$total_empregos)
+                      ,by = list(rais_completo$sg_estado), FUN = "sum" )
+print(questao3)
+
+questao5 <- cbind(rais_completo$id_cbo)
+View(questao5)
+
 
 
 
