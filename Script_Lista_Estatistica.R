@@ -99,7 +99,7 @@ subset(rais_completo$sg_estado, rais_completo$ano > 2000, rais_completo$total_em
 
 
 # PERGUNTA 5 - Qual ocupacao possui o maior número de empregos no Brasil?
-rais_completo[rais_completo$descricao , rais_completo$total_empregos,]
+
 
 
 #6. Qual ocupa ̧ca ̃o possui maior remunera ̧ca ̃o m ́edia? E a menor?
