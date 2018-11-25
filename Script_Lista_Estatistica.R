@@ -61,7 +61,7 @@ View(questao3a)
 
 #POR OCUPACAO
 questao3b <- aggregate(cbind( rais_completo$renda_mensal_total, rais_completo$total_empregos)
-                      ,by = list(rais_completo$id_cbo), FUN = "sum" )
+                      ,by = list(rais_completo$id_cbo),  FUN = "sum")
 View(questao3b)
 
 #####################################################################################
@@ -72,8 +72,8 @@ empregos <- rais_completo$total_empregos
 
 data_questao <- data_frame(estado, empregos)
 
- questao4 <- data_questao[order(data_questao$empregos, decreasing = TRUE),]
-
+questao4 <- data_questao[order(data_questao$empregos, decreasing = TRUE),]
+View(questao4)
 #####################################################################################
 #Qual ocupa ̧ca ̃o possui o maior nu ́mero de empregos no Brasil?
 
