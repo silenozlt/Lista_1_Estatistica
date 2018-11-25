@@ -147,5 +147,5 @@ table(infert$education,infert$spontaneous) # Tabela cruzada de frequ?ncia absolu
 #TABELA CRUZADA
 CrossTable(x=infert$education,y=infert$induced,format="SAS")
 ?CrossTable
-
+33
 
