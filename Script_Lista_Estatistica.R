@@ -96,18 +96,13 @@ View(questao4)
 subset(rais_completo$sg_estado, rais_completo$ano > 2000, rais_completo$total_empregos,)
 
 # PERGUNTA 5 - Qual ocupacao possui o maior número de empregos no Brasil?
-questao5 <- aggregate(cbind( rais_completo$renda_mensa, rais_completo$total_empregos)
-                      ,by = list(rais_completo$sg_estado), FUN = "sum" )
-print(questao3)
-
-questao5 <- cbind(rais_completo$id_cbo)
+questao5 <- aggregate(cbind( rais_completo$id_cbo, rais_completo$total_empregos)
+                      ,by = list(rais_completo$id_cbo), FUN = "sum" )
 View(questao5)
 
 
-subset(rais_completo, Codigo == 1, select = c(id_cbo, sg_estado))
-?subset
-
-
+#EXEMPLO SUBSET
+x <- subset(rais_completo, id_cbo == 1112, select = c(id_cbo, total_empregos))
 
 #6. Qual ocupa ̧ca ̃o possui maior remunera ̧ca ̃o m ́edia? E a menor?
 
