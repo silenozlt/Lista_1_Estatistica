@@ -97,11 +97,6 @@ subset(rais_completo$sg_estado, rais_completo$ano > 2000, rais_completo$total_em
 
 
 
-select sg_estado from rais_completo order by total_empregos
-
-
-
-
 
 # PERGUNTA 5 - Qual ocupacao possui o maior número de empregos no Brasil?
 rais_completo[rais_completo$descricao , rais_completo$total_empregos,]
