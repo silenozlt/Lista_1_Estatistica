@@ -88,11 +88,15 @@ questao6 <- aggregate(cbind( rais_completo$id_cbo, rais_completo$renda_mensal_to
                       ,by = list(rais_completo$id_cbo), FUN = "sum" )
 View(questao6)
 
-y <- questao6$V2 / questao6$V1
-View(y)
+renda_media <- questao6$V2 / questao6$V1
+View(renda_media)
 
 
 #####################################################################################
+# PERGUNTA - 7. Quantas ocupa ̧co ̃espossuemremunera ̧ca ̃om ́ediamenorqueR$2.000,00 reais?
+
+
+
 
 #CARREGANDO CONJUNTO DE DADOS INFERT
 (data("infert"))
