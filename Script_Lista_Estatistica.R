@@ -104,6 +104,9 @@ questao5 <- cbind(rais_completo$id_cbo)
 View(questao5)
 
 
+subset(rais_completo, Codigo == 1, select = c(id_cbo, sg_estado))
+?subset
+
 
 
 #6. Qual ocupa ̧ca ̃o possui maior remunera ̧ca ̃o m ́edia? E a menor?
