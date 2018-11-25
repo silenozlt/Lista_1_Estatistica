@@ -112,7 +112,7 @@ questao8 <- aggregate(
   cbind( questao8_data = (questao8_data$renda_mensal_total /questao8_data$total_empregos))
   ,by = list(ocupacao = questao8_data$descricao), FUN = "median" )
 
-View(questao8)
+print(questao8)
 
 which.max(questao8$questao8_data)
 
