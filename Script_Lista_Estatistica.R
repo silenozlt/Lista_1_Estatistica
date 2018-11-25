@@ -75,44 +75,24 @@ data_questao <- data_frame(estado, empregos)
 questao4 <- data_questao[order(data_questao$empregos, decreasing = TRUE),]
 View(questao4)
 #####################################################################################
-#Qual ocupa ̧ca ̃o possui o maior nu ́mero de empregos no Brasil?
-
-
-
-
-
-
-
-
-
-estado_funcionarios <- 
-questao4 <- rais_completo[order(rais_completo$sg_estado),]
-View(questao4)
-order(rais_completo, decreasing = TRUE)
-
-questao4 <- rais_completo[order(rais_completo$sg_estado),]
-View(questao4)
-
-subset(rais_completo$sg_estado, rais_completo$ano > 2000, rais_completo$total_empregos,)
-
 # PERGUNTA 5 - Qual ocupacao possui o maior número de empregos no Brasil?
 questao5 <- aggregate(cbind( rais_completo$id_cbo, rais_completo$total_empregos)
                       ,by = list(rais_completo$id_cbo), FUN = "sum" )
 View(questao5)
 
-
 #EXEMPLO SUBSET
 x <- subset(rais_completo, id_cbo == 1112, select = c(id_cbo, total_empregos))
-
+#####################################################################################
 #6. Qual ocupa ̧ca ̃o possui maior remunera ̧ca ̃o m ́edia? E a menor?
+questao6 <- aggregate(cbind( rais_completo$id_cbo, rais_completo$renda_mensal_total)
+                      ,by = list(rais_completo$id_cbo), FUN = "sum" )
+View(questao6)
 
-questao6 <- questao6[
-  order(
-    questao6$renda_mensal_total
-    ,decreasing = TRUE
-  )
-]
+y <- questao6$V2 / questao6$V1
+View(y)
 
+
+#####################################################################################
 
 #CARREGANDO CONJUNTO DE DADOS INFERT
 (data("infert"))
