@@ -94,6 +94,27 @@ View(renda_media)
 
 #####################################################################################
 # PERGUNTA - 7. Quantas ocupa ̧co ̃espossuemremunera ̧ca ̃om ́ediamenorqueR$2.000,00 reais?
+questao7 <- aggregate(
+   cbind( remuneracao_media = (rais_completo$renda_mensal_total /rais_completo$total_empregos))
+   ,by = list(ocupacao = rais_completo$descricao), FUN = "median" )
+View(questao7)
+
+questao7 <- subset(questao7, remuneracao_media < 2000 ,select = ocupacao)
+
+print(nrow(questao7))
+
+#####################################################################################
+#PERGUNTA - 8 Dentre os t ́ecnicos de n ́ıvel m ́edio de Minas Gerais, qual ocupa ̧ca ̃o pos- sui maior remunera ̧ca ̃o m ́edia?
+questao8_data <- subset(rais_completo, sg_estado == "MG" & Codigo ==3, select = c(descricao, renda_mensal_total, total_empregos) )
+View(questao8_data)
+
+questao8 <- aggregate(
+  cbind( questao8_data = (questao8_data$renda_mensal_total /questao8_data$total_empregos))
+  ,by = list(ocupacao = questao8_data$descricao), FUN = "median" )
+
+View(questao8)
+
+which.max(questao8$questao8_data)
 
 
 
