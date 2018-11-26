@@ -119,15 +119,10 @@ which.max(questao8$questao8_data)
 #####################################################################################
 # PERGUNTA - 9 Fa ̧ca um gr ́afico de barras representando o nu ́mero de empregos por Grande Grupo
 questao9 <- aggregate(cbind(rais_completo$descricao ,rais_completo$total_empregos)
-  ,by = list(ocupacao = rais_completo$total_empregos), FUN = "sum" )
+  ,by = list(ocupacao = rais_completo$descricao), FUN = "sum" )
 View(questao9)
 
-questao9 <- data_frame(rais_completo$id_cbo, rais_completo$total_empregos, rais_completo$descricao)
-
-View(questao9)
-
-
-
+boxplot(questao9$V2, questao9$ocupacao)
 
 boxplot(rais_completo$descricao, rais_completo$total_empregos)
 
