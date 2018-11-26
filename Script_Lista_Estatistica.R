@@ -133,12 +133,31 @@ plot(questao8$V1, questao9$V2)
 #CARREGANDO CONJUNTO DE DADOS INFERT
 (data("infert"))
 View(infert)
+# 1. Calcule o nu ́mero total de abortos (induzidos e espontˆaneos)
 
 #SOMANDO TOTAL DE ABORTOS INDUZIDOS
 sum(infert$induced)
 
 #SOMANDO TOTAL DE ABORTOS INDUZIDOS
 sum(infert$spontaneous)
+
+#####################################################################################
+#2. Construa uma tabela de frequˆencia cruzada entre o nu ́mero total de abortos e a escolaridade das mulheres.
+
+
+replicate1 <- infert[1:82,]
+replicate2 <- infert[83:164,]
+replicate3 <- infert[165:246,]
+
+CASOS <- c(sum(replicate1$induced),sum(replicate1$spontaneous))
+Controle1 <- c(sum(replicate2$induced),sum(replicate2$spontaneous))
+Controle2 <- c(sum(replicate3$induced),sum(replicate3$spontaneous))
+
+repl <- data.frame(CASOS, Controle1, Controle2)
+barplot(as.matrix(repl), main= "CASOS DE ABORTO", ylab = "Induced + Spontaneous",space=0.3, cex.axis=0.8, col= cm.colors(2))
+legend("topright", c("INDUZIDO", "ESPONTANEO"), fill=cm.colors(2))
+
+
 
 
 require(gmodels)
