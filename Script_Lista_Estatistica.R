@@ -118,6 +118,16 @@ which.max(questao8$questao8_data)
 
 #####################################################################################
 # PERGUNTA - 9 Fa ̧ca um gr ́afico de barras representando o nu ́mero de empregos por Grande Grupo
+questao9 <- aggregate(cbind( rais_completo$renda_mensal_total, rais_completo$total_empregos)
+                       ,by = list(rais_completo$descricao), FUN = "sum" )
+
+View(questao9)
+
+tab <- table(questao9$total_empregos, questao9$descricao)
+barplot(questao9)
+View(tab)
+
+
 questao9 <- aggregate(cbind(rais_completo$descricao ,rais_completo$total_empregos)
   ,by = list(ocupacao = rais_completo$descricao), FUN = "sum" )
 View(questao9)
@@ -144,20 +154,11 @@ sum(infert$spontaneous)
 #####################################################################################
 #2. Construa uma tabela de frequˆencia cruzada entre o nu ́mero total de abortos e a escolaridade das mulheres.
 
+table(infert$education, infert$case, useNA = NULL)
 
-replicate1 <- infert[1:82,]
-replicate2 <- infert[83:164,]
-replicate3 <- infert[165:246,]
+View(infert)
 
-CASOS <- c(sum(replicate1$induced),sum(replicate1$spontaneous))
-Controle1 <- c(sum(replicate2$induced),sum(replicate2$spontaneous))
-Controle2 <- c(sum(replicate3$induced),sum(replicate3$spontaneous))
-
-repl <- data.frame(CASOS, Controle1, Controle2)
-barplot(as.matrix(repl), main= "CASOS DE ABORTO", ylab = "Induced + Spontaneous",space=0.3, cex.axis=0.8, col= cm.colors(2))
-legend("topright", c("INDUZIDO", "ESPONTANEO"), fill=cm.colors(2))
-
-
+#####################################################################################
 
 
 require(gmodels)
@@ -171,4 +172,7 @@ table(infert$education,infert$spontaneous) # Tabela cruzada de frequ?ncia absolu
 CrossTable(x=infert$education,y=infert$induced,format="SAS")
 ?CrossTable
 
+
+
+#####################################################################################
 
