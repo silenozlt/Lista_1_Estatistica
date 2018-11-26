@@ -122,13 +122,9 @@ questao9 <- aggregate(cbind(rais_completo$descricao ,rais_completo$total_emprego
   ,by = list(ocupacao = rais_completo$descricao), FUN = "sum" )
 View(questao9)
 
-boxplot(questao9$V2, questao9$ocupacao)
-
-boxplot(rais_completo$descricao, rais_completo$total_empregos)
-
-
-
-
+pie(questao9$V2,
+    labels = paste(questao9$ocupacao," (",round(prop,3)*100,"%)", sep=""),col=c(1,3))
+plot(questao8$V1, questao9$V2)
 
 
 
