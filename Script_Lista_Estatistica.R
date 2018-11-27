@@ -175,4 +175,4 @@ CrossTable(x=infert$education,y=infert$induced,format="SAS")
 
 
 #####################################################################################
-
+TESTE
