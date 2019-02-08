@@ -1,9 +1,11 @@
 #LISTA DE EXERCICIOS 
+rm(list=ls(all=TRUE))
+
 
 require(dplyr)
 require(ggplot2)
 # Definindo o diretorio
-setwd("/Users/cassio/Desktop/Lista_1_Estatistica")
+setwd("/Users/cassio/Dropbox/Pos Data Science/Lista_1_Estatistica")
 
 #CARREGANDO ARQUIVO CBO2002_Familia.csv
 familia <- read.table("CBO2002_Familia.csv", sep = ";", header = TRUE,na.strings = '')
@@ -82,6 +84,7 @@ View(questao5)
 
 #EXEMPLO SUBSET
 x <- subset(rais_completo, id_cbo == 1112, select = c(id_cbo, total_empregos))
+x
 #####################################################################################
 #6. Qual ocupa ̧ca ̃o possui maior remunera ̧ca ̃o m ́edia? E a menor?
 questao6 <- aggregate(cbind( rais_completo$id_cbo, rais_completo$renda_mensal_total)
